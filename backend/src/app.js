@@ -20,6 +20,7 @@ app.use(cors({
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+//Using Middleware
 app.use(morgan("dev")); // Add morgan here for request logging
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
