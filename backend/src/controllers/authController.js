@@ -64,7 +64,10 @@ export const loginWithGoogle = async (req, res) => {
         } 
 
         console.log("Generating the jwt token for user.");
-        const userToken = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "7d" })
+        const userToken = jwt.sign({ id: user._id, role: user.role }, 
+            process.env.JWT_SECRET,
+             { expiresIn: "7d" }
+            )
 
         console.log("Token Generated. Setting the token to cookies as jwt.");
         res.cookie("jwt", 

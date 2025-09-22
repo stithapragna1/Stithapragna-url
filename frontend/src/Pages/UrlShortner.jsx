@@ -15,17 +15,19 @@ const UrlShortener = () => {
   const getShortUrl = async () => {
     const response = await service.post("s", {
       customUrl,
-      originalUrl,
-      expiryDate,
+      originalURL: originalUrl, // <-- change here
+      expiresAt: expiryDate,    // <-- change here
       title,
-    });
-    setShortUrlData(response);
+    }); 
+    setShortUrlData(response.data);
+    console.log(response);
   };
+
 
   return (
     <Center style={{ height: "90vh" }}>
       <Stack gap="sm">
-        {!shortUrlData ? (
+        {shortUrlData === null ? (
           <>
             <Text
               variant="gradient"
