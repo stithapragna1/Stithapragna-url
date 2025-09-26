@@ -34,7 +34,7 @@ const Myurls = () => {
                 {data && data.map((d) => (  
                     <Table.Tr key={d._id}>
                         <Table.Td>
-                            <Text>{d?.title || "NA" } </Text>
+                            <Text>{d?.title ||  "NA" } </Text>
                         </Table.Td>
                         <Table.Td>
                             <Anchor href={d?.originalUrl} target="_blank">
@@ -55,7 +55,7 @@ const Myurls = () => {
                                     </span>
                                 </Table.Td>
                           <Table.Td >
-                                    <Text>{d?.clickCount  || 0}</Text>
+                                    <Text>{d?.clickCount || 0}</Text>
                                 </Table.Td>
  <Table.Td>
                                     <Text>{(d?.createdAt)}</Text>
